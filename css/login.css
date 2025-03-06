@@ -1,0 +1,38 @@
+/* --- This is the styling for login form --- */
+
+.white-container {
+    padding: 50px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 50px auto;
+}
+
+input {
+    font-family: 'Poppins';
+    margin-bottom: 15px;
+    border: 1.5px solid lightgray;
+    padding: 5px 14px;
+    width: 90%;
+}
+
+input:focus {
+    border: 1.5px solid #0f2044;
+    outline: none;
+}
+
+textarea {
+    font-family: 'Poppins';
+    margin-bottom: 15px;
+    border: 1.5px solid lightgray;
+    padding: 5px 14px;
+    width: 90%;
+}
+
+select {
+    font-family: 'Poppins';
+    margin-bottom: 15px;
+    border: 1.5px solid lightgray;
+    padding: 3px 5px;
+    width: 50%;
+}

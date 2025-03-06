@@ -1,0 +1,108 @@
+/* --- This is the main overall styling across all pages --- */
+
+body {
+    background-image: url('/assets/campus-splash-overlay-0.3.jpg'); 
+    background-size: cover;
+    font-family: 'Poppins';
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.65;
+}
+
+footer {
+    background-color: #0f2044;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    position: relative;
+    margin-top: auto;
+}
+
+a {
+    color:#0f2044;
+    text-decoration: none;
+}
+
+a.white {
+    color: white;
+}
+
+.container { /*header padding*/
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+}
+
+h2, h3 {
+    color: #0f2044;
+    margin: 0;
+}
+
+header {
+    background-color: #0f2044;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px 10px 0px;
+}
+
+hr.gray {
+    border: 1px solid rgba(211, 211, 211, 0.5);
+    width: 100%;
+}
+  
+hr.yellow {
+    border: 1px solid #ffb71b;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 16px;
+    background-color: #ffb71b;
+    color:#0f2044;
+    padding: 9px 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+  
+button:hover {
+    border: none;
+    transform: scale(1.05);
+}
+
+/* --- NAV BAR --- */
+nav {
+    background-color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    padding: 12px 0px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 3px 20px;
+}
+
+nav ul li a:hover {
+    border-bottom: 3px solid #ffb71b;
+}
+
