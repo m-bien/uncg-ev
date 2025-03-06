@@ -1,49 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!--====== METADATA =====-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - UNCG EV’s</title>
-    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@700;500&display=swap' rel='stylesheet'>
-    <link rel="stylesheet" href="booking-style.css">
+    <title>Home - UNCG EV</title>
+    <link rel="icon" href="assets\favicon.png">
+
+    <!--- Meta SEO -->
+    <meta content="UNCG's EV" property="og:title" />
+    <meta content="#" property="og:url" />
+    <meta content="An EV charger locater for UNCG campus" property="og:description" />
+
+    <!-- Google Fonts & Styles -->
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@700' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@500' rel='stylesheet'>
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\booking.css">
+
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Scripts -->
+    <script src='js/index.js' defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 </head>
 
+<!--===== PAGE CONTENT =====-->
+
 <body>
-<div class="container">
+
+    <!--- Header --->
     <header>
-        <img id="logo" src="images/uncg_hrzntl-svg.png" alt="UNCG Logo">
-        <h2 class="site-title">UNCG EV’s</h2>
+        <div class="container"><a href="index.html"><img style="width:200px" src="assets/uncg_hrzntl-svg.png"></a></div>
+        <hr class="gray">
+        <div class="container">
+            <h2><a class="white" href="index.html">UNCG EV</a></h2>
+        </div>
     </header>
+
+    <!--- Navbar -->
     <nav>
         <ul>
-            <li><a href="index.html">HOME</a></li>
+            <li><a href="home.html">HOME</a></li>
             <li><a href="map.html">MAP</a></li>
-            <li><a href="booking.html">My Booking</a></li>
+            <li><a href="booking.html">BOOKING</a></li>
+            <li><a href="index.html">LOGOUT</a></li>
         </ul>
     </nav>
-    <main>
-        <h2>Book a Charging Station</h2>
 
-        <label for="chargerSelect">Select a Charger:</label>
-        <select id="chargerSelect"></select>
+    <!--- Page Content --->
+    <section class="white-container" style="text-align:center">
+        <h2>RESERVE A CHARGER</h2>
+        <hr class="yellow">
 
-        <label for="bookingDate">Select Date:</label>
-        <input type="date" id="bookingDate">
+        <button id="bookStationBtn" onclick="toggleBookingForm()">Book a Station</button>
+        <br><br>
+        <div id="bookingForm" style="display:none;">
+            <label for="stationSelect">Select Station: </label>
+            <select id="stationSelect">
+                <!-- Station options will be dynamically populated here -->
+                <option value="1">McIver Charger 1</option>
+                <option value="1">McIver Charger 2</option>
+                <option value="1">McIver Charger 3</option>
+                <option value="1">McIver Charger 4</option>
+                <option value="1">Oakland Charger 1</option>
+                <option value="1">Oakland Charger 2</option>
+                <option value="1">Oakland Charger 3</option>
+                <option value="1">Oakland Charger 4</option>
+                <option value="1">Nursing Charger 1</option>
+                <option value="1">Nursing Charger 2</option>
+                <option value="1">Nursing Charger 3</option>
+                <option value="1">Nursing Charger 4</option>
+            </select>
+            &nbsp;
+            <label for="bookingDate">Select Date and Time: </label>
+            <input type="text" id="bookingDate">
+            <br><br>
+            <button id="bookStationBtn" onclick="submitBooking()">Submit Booking</button>
+        </div>
+        <br><br>
 
-        <label for="startTime">Select Start Time:</label>
-        <select id="startTime"></select>
+        <h2>MY BOOKINGS</h2>
+        <hr class="yellow">
 
-        <label for="endTime">Select End Time:</label>
-        <select id="endTime"></select>
-
-        <button id="bookStationBtn" onclick="submitBooking()">Book Now</button>
-
-        <h2>My Bookings</h2>
         <table id="bookingTable">
             <thead>
             <tr>
                 <th>Date</th>
-                <th>Start Time - End Time</th>
+                <th>Time</th>
                 <th>Location</th>
                 <th>Actions</th>
             </tr>
@@ -52,11 +102,34 @@
             <!-- Booking entries will be dynamically inserted here -->
             </tbody>
         </table>
-    </main>
+    </section>
+
+    <!--- Footer --->
     <footer>
-        <p>&copy; UNCG EV’s</p>
+        <p>&copy; UNCG EV 2025</p>
     </footer>
-</div>
-<script src="booking.js"></script>
+
+    <!--- Scripts --->
+    <script>
+        flatpickr("#bookingDate", {
+            enableTime: true,
+            noCalendar: false,
+            dateFormat: "Y-m-d h:i K",
+            time_24hr: false,
+            minuteIncrement: 15
+        });
+
+        function toggleBookingForm() {
+            var form = document.getElementById('bookingForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function submitBooking() {
+            // Implement the actual booking logic here
+            alert('Booking submitted!');
+        }
+    </script>
+
 </body>
+
 </html>
