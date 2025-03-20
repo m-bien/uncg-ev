@@ -26,7 +26,7 @@ chargers.forEach(station => {
             <b>${station.name}</b><br>
             EV Charging Available.<br>
             <button onclick="openDirections(${station.lat}, ${station.lng})" 
-                style="margin-top:5px; padding:5px 10px; background:#0f2044; color:white; border:none; cursor:pointer;">
+                style="margin:10px 0px 5px; padding:7px 14px; font-size:14px">
                 Get Directions
             </button>
         `);
