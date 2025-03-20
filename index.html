@@ -53,12 +53,13 @@
         <h2>LOGIN TO YOUR ACCOUNT</h2>
         <hr class="yellow">
 
-        <input type="email" class="form-control" placeholder="UNCG Email" required>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <br>
-        <a href="home.html"><button>Login</button></a>
-        <!--- <button type="submit" onclick="login()" class="btn btn-block login-button">Login</button> -->
-            
+        <form id="emailForm" onsubmit="return validateLogin(event)" autocomplete="off">
+            <input type="email" id="email" class="form-control" placeholder="UNCG Email" required>
+            <input type="password" id="password" class="form-control" placeholder="Password" required>
+            <br>
+            <button type="submit">Login</button>
+            <p id="errorMessage" style="color: red; display: none;">Please enter a valid email.</p>
+        </form>
         <p>Don't have an account? <a href="signup.html"><u>Sign up</u></a></p>
     </section>
 

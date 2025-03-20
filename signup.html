@@ -52,14 +52,15 @@
         <h2>CREATE AN ACCOUNT</h2>
         <hr class="yellow">
 
-        <input type="text" class="form-control" placeholder="Full Name" required>
+        <form id="emailForm" onsubmit="return createAccount()" autocomplete="off">
+            <input type="text" class="form-control" placeholder="Full Name" required>
             <input type="email" class="form-control" placeholder="UNCG Email" required>
             <input type="password" class="form-control" placeholder="Password" required>
             <input type="password" class="form-control" placeholder="Confirm Password" required>
-        <br>
-        <a href="home.html"><button>Signup</button></a>
-        <!--- <button type="submit" onclick="signup()">SIGN UP</button> -->
-
+            <br>
+            <button type="submit">Signup</button>
+            <p id="errorMessage" style="color: red; display: none;">Please enter a valid UNCG email.</p>
+        </form>
         <p>Already have an account? <a href="index.html"><u>Login</u></a></p>
     </section>
 
