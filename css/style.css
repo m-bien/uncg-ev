@@ -1,7 +1,7 @@
 /* --- This is the main overall styling across all pages --- */
 
 body {
-    background-image: url("/assets/campus-splash-overlay-0.3.jpg"); 
+    background-image: url("assets/campus-splash-overlay-0.3.jpg"); 
     background-size: cover;
     font-family: 'Poppins';
     margin: 0;
