@@ -52,7 +52,7 @@
         <h2>CREATE AN ACCOUNT</h2>
         <hr class="yellow">
 
-        <form id="emailForm" onsubmit="return createAccount()" autocomplete="off">
+        <form action="/signup" method="POST">
             <input type="text" class="form-control" placeholder="Full Name" required>
             <input type="email" class="form-control" placeholder="UNCG Email" required>
             <input type="password" class="form-control" placeholder="Password" required>
