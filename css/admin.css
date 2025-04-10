@@ -1,0 +1,137 @@
+/* --- This is the styling for the admin --- */
+
+.white-container {
+    padding: 50px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 50px auto;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+}
+
+/* Individual Card Styling */
+.card {
+    background: #3498DB;
+    color: white;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.card p {
+    margin: 5px 0 0;
+}
+
+/* Chart Container - Maintenance Report Status */
+.card {
+    padding: 20px;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Canvas Styling (for Chart.js) */
+#maintenanceStatusChart {
+    width: 100% !important; /* Ensure chart takes full width of the card */
+    height: 300px !important; /* Fixed height for chart */
+    margin-top: 10px;
+}
+
+/* Center Content Inside the Card */
+.card {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* For Pie Chart Labels */
+#maintenanceStatusChart + .card p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Chargers Management */
+#addChargerBtn {
+    padding: 10px 15px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#addChargerBtn:hover {
+    background-color: #219150;
+}
+
+/* Chargers Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+td button {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.edit-btn {
+    background-color: #f1c40f;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #d4ac0d;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}

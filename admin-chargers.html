@@ -29,7 +29,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Add Chart.js CDN -->
-    <script src="js/admin-dashboard.js" defer></script>
+    <script src="js/admin-chargers.js" defer></script>
 </head>
 
 <!--===== PAGE CONTENT =====-->
@@ -56,41 +56,51 @@
     </nav>
 
     <!--- Page Content --->
-    <section class="white-container" style="text-align:center">
-        <h2>ADMIN DASHBOARD</h2>
+    <section class="white-container">
+        <h2 >CHARGERS MANAGEMENT
+            <span style="float: right;"><button id="addChargerBtn">+ Add New Charger</button></span>
+        </h2>
         <hr class="yellow">
     
-        <div class="dashboard-cards">
-            <div class="card">
-                <p id="activeChargersCount">Loading...</p>
-                <p>Active Chargers</p><br>
-                <i class="fas fa-charging-station fa-xs" style="color: #0f2044;"></i>            
+        <table class="chargers-list">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Last Serviced</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="chargersTable">
+                <!-- Chargers will be loaded here dynamically -->
+            </tbody>
+        </table>
+    
+        <!-- Modal for Add/Edit Charger -->
+        <div id="chargerModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">ADD CHARGER</h2>
+                <form id="chargerForm">
+                    <input type="hidden" id="chargerId"> <!-- Hidden field for editing -->
+    
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" required>
+    
+                    <label for="status">Status:</label>
+                    <select id="status" required>
+                        <option value="available">Available</option>
+                        <option value="in_use">In Use</option>
+                        <option value="out_of_service">Out of Service</option>
+                    </select>
+    
+                    <label for="lastServiced">Last Serviced Date:</label>
+                    <input type="date" id="lastServiced" required>
+    
+                    <button type="submit">Save</button>
+                </form>
             </div>
-            <div class="card">
-                <h3>25</h3>
-                <p>Upcoming Reservations</p><br>
-                <i class="fas fa-calendar-alt" style="color: #0f2044;"></i>
-            </div>
-            <div class="card">
-                <p id="reportedIssuesCount">Loading...</p>
-                <p>Reported Issues</p><br>
-                <i class="fas fa-exclamation-triangle" style="color: #0f2044;"></i>
-
-            </div>
-            <div class="card">
-                <p id="openTicketsCount">Loading...</p>
-                <p>Open Tickets</p><br>
-                <i class="fas fa-ticket-alt" style="color: #0f2044;"></i>
-            </div>
-            <div class="card">
-                <h3>150</h3>
-                <p>Registered Users</p><br>
-                <i class="fas fa-users" style="color: #0f2044;"></i>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Maintenance Report Status</h3>
-            <canvas id="maintenanceStatusChart"></canvas>
         </div>
     </section>
 
