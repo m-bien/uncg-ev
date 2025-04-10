@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--====== METADATA =====-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - UNCG EV</title>
+    <link rel="icon" href="assets\favicon.png">
+
+    <!--- Meta SEO -->
+    <meta content="UNCG's EV" property="og:title" />
+    <meta content="#" property="og:url" />
+    <meta content="An EV charger locater for UNCG campus" property="og:description" />
+
+    <!-- Google Fonts & Styles -->
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@700' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@500' rel='stylesheet'>
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\admin.css">
+    
+    <!-- Scripts -->
+    <script src='js/index.js' defer></script>
+    <link rel="icon" href="">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Add Chart.js CDN -->
+    <script src="js/admin-maintenance.js" defer></script>
+</head>
+
+<!--===== PAGE CONTENT =====-->
+
+<body>
+     <!--- Header --->
+     <header>
+        <div class="container"><a href="index.html"><img style="width:200px" src="assets/uncg_hrzntl-svg.png"></a></div>
+        <hr class="gray">
+        <div class="container">
+            <h2><a class="white" href="index.html">UNCG EV</a></h2>
+        </div>
+    </header>
+
+    <!--- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="admin.html">HOME</a></li>
+            <li><a href="admin-chargers.html">CHARGERS</a></li>
+            <li><a href="#">RESERVATIONS</a></li>
+            <li><a href="admin-maintenance.html">MAINTENANCE</a></li>
+            <li class="right"><a href="index.html">LOGOUT</a></li>
+        </ul>
+    </nav>
+
+    <!--- Page Content --->
+    <section class="white-container">
+        <h2>MAINTENANCE REPORTS
+            <span style="float: right;"><button id="reportIssueBtn">+ Report Issue</button></span>
+        </h2>
+        <hr class="yellow">
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab(event, 'pending')">Pending Reports</button>
+            <button class="tab-btn" onclick="showTab(event, 'tickets')">Open Tickets</button>
+        </div>
+        
+        <section id="pendingTab" class="tab-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Charger ID</th>
+                        <th>Reported By</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="maintenanceTable"></tbody>
+            </table>
+        </section>
+    
+        <section id="ticketsTab" class="tab-content" style="display:none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Charger ID</th>
+                        <th>Assigned To</th>
+                        <th>Description</th>
+                        <th>Resolution Note</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="ticketsTable"></tbody>
+            </table>
+        </section>
+    
+        <!-- Report Issue Modal -->
+        <div id="reportModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Maintenance Report</h2>
+                <form id="reportForm">
+                    <label for="chargerIdInput">Charger ID:</label>
+                    <input type="text" id="chargerIdInput" required>
+    
+                    <label for="reportedByInput">Reported By:</label>
+                    <input type="text" id="reportedByInput" required>
+    
+                    <label for="issueDescriptionInput">Issue Description:</label>
+                    <textarea id="issueDescriptionInput" required></textarea>
+                    <br>    
+                    <button type="submit">Submit Report</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--- Footer --->
+    <footer>
+        <p>&copy; UNCG EV 2025</p>
+    </footer>
+</body>
+
+</html>

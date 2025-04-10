@@ -80,20 +80,6 @@
 }
 
 /* Chargers Management */
-#addChargerBtn {
-    padding: 10px 15px;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#addChargerBtn:hover {
-    background-color: #219150;
-}
-
-/* Chargers Table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -118,20 +104,39 @@ td button {
     border-radius: 4px;
 }
 
-.edit-btn {
-    background-color: #f1c40f;
-    color: white;
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
 }
 
-.delete-btn {
-    background-color: #e74c3c;
-    color: white;
+.modal-content {
+    background-color: white;
+    width: 300px;
+    text-align: center;
+    padding: 30px;
 }
 
-.edit-btn:hover {
-    background-color: #d4ac0d;
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.delete-btn:hover {
-    background-color: #c0392b;
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form select {
+    margin: 10px;
+    padding: 8px;
 }
