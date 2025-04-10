@@ -24,7 +24,7 @@
     <script src='js/index.js' defer></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/admin-report.js"></script>
 </head>
 
 <!--===== PAGE CONTENT =====-->
@@ -57,16 +57,26 @@
     </nav>
 
     <!--- Page Content --->
-    <section class="white-container" style="text-align:center">
-        <h2>WELCOME TO UNCG EV</h2>
+    <section class="white-container">
+        <h2>REPORT A CHARGER ISSUE</h2>
         <hr class="yellow">
     
-        <p>This UNCG EV website improves the EV charging experience for faculty, students, and staff by addressing
-            inefficiencies in the first-come, first-serve system. It offers real-time notifications on charger
-            availability, including charging reservations and reminders. UNCG EV supports UNCG's sustainability efforts by reducing wait
-            times and optimizing charger use.</p>
-        
-        <a href="map.html"><button>Find A Charger</button></a>
+        <p class="description">
+            If you experience any issues with a charger, please report it below. Our team will review and resolve the issue as soon as possible.
+        </p>
+
+        <!-- Report Form -->
+        <form id="reportForm">
+            <label for="chargerId">Charger ID:</label>
+            <input type="number" id="chargerId" required>
+
+            <label for="issueDescription">Issue Description:</label>
+            <textarea id="issueDescription" required></textarea>
+
+            <button type="submit" class="report-btn">Submit Report</button>
+        </form>
+
+        <p id="reportMessage" class="hidden"></p>
     </section>
 
     <!--- Footer --->
